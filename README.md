@@ -1,4 +1,4 @@
-# Intro-to-Git-exercise-1
+# Intro to Git - exercise 1
 In this exercise you will learn how to create a git repository, add files to it and track changes to those files.
 
 
@@ -14,8 +14,9 @@ git init
 (If you set view to show hidden files, you should now see a _.git_ folder in your example1 folder.)
 
 Congratulations. You have just created an empty git repository.
-  
 
+
+  
 Now we need some files to track with our git repository. **Create some plain text files** in the example1 folder. You can add as many as you want, but **name one of them _code.txt_.**
   
   
@@ -34,13 +35,13 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 We can see that git isn’t tracking our files. We need to _add_ them to the git repository. Add all the files.
 
-```
+```bash
 git add .
 ```
 
 git status will now look something like
 
-```
+```git
 On branch master
 Initial commit
 Changes to be committed:
@@ -52,8 +53,8 @@ Changes to be committed:
 
 We’re now ready to take our first snapshot of our files. In git, this is called a commit.
 
-```
-	git commit -m “Initial commit. Added empty project files.”
+```bash
+git commit -m “Initial commit. Added empty project files.”
 ```
 
 (The -m switch allows you to add a comment in the same command as making a commit.)
@@ -62,7 +63,7 @@ We’re now ready to take our first snapshot of our files. In git, this is calle
 Congratulations, you have just made the first commit of your repository. You can see this commit if you type the command `git log`.
 
 
- 
+
 Let’s add some pseudo-code. **Open code.txt in a text editor and add the following**
 
 >#variables  
@@ -72,9 +73,9 @@ Let’s add some pseudo-code. **Open code.txt in a text editor and add the follo
 >  
 >#program  
 >if git-foo is equal to good  
->    s = the fonz   
+>&nbsp;&nbsp;	s = the fonz   
 >else  
->    s = sad-face  
+>&nbsp;&nbsp;	s = sad-face  
 >  
 >print 'hello world'  
 >print s  
@@ -85,8 +86,8 @@ Typing `git status` on the command line should show _code.txt_ as being modified
 
 Let’s **commit that change.** (Remember that first, we have to add the file to staging before we can commit it.)
 ```bash
-	git add code.txt
-	git commit -m “Added pseudo-code.”
+git add code.txt
+git commit -m “Added pseudo-code.”
 ```
 Git status should now show the working directory as _clean_.
 
@@ -98,7 +99,7 @@ Go back to _code.txt_. We’re going to make some changes to the pseudo-code we 
 
 Oh no, that hasn’t worked at all. Now our code doesn’t run. Fear not, we can use git to get our code back to how it was before. Type the following command
 ```bash
-	git checkout -- code.txt
+git checkout -- code.txt
 ```
 If we open _code.txt_ now, you should see that it has reverted back to when we had the _git-foo_ variable.
 
